@@ -11,6 +11,7 @@ function addTransaction(event){
     event.preventDefault();
 
     if(!transactionNameInput.value.trim() || !transactionValueInput.value.trim()) return alert('Campos Vazios');
+    if(transactionValueInput.value == 0) return alert('Valor inválido');
 
     const transactionName = transactionNameInput.value.trim();
     const transactionValue = Number(transactionValueInput.value.trim().replace(',','.'));
